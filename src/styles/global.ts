@@ -16,8 +16,11 @@ export default createGlobalStyle`
   }
 
   body {
-    /* background: ${props => props.theme.colors.background}; */
-    font: 400 16px Roboto, sans-serif;
+    background: ${props => props.theme.colors.neutral.white};
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: auto;
