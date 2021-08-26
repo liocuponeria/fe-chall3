@@ -5,7 +5,8 @@ const theme = {
       black: '#000000',
       lightGray: '#EFEFEF',
       gray: '#B9B9B9',
-      darkGray: '#666666',
+      darkerGray: '#666666',
+      darkestGray: '#333333'
     },
     highlight: {
       red: '#FF0000',
@@ -18,8 +19,3 @@ const theme = {
 }
 
 export default theme
-
-
-
-
-
