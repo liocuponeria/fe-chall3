@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 
 import Face from '../../assets/images/face.svg'
 import Instagram from '../../assets/images/insta.svg'
