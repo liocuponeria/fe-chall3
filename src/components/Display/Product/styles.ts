@@ -11,7 +11,7 @@ export const Container = styled.div`
   transition: all 0.15s;
 
   &:hover {
-    box-shadow: 0px 6px 12px #0000001f;
+    box-shadow: 0px 4px 10px #cccccc;
   }
 
   > a {
