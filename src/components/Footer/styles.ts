@@ -2,12 +2,11 @@ import styled from 'styled-components'
 
 export const Container = styled.footer`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 
   width: 100%;
-  height: 100px;
 
-  padding: 32px;
+  padding: 40px 32px 0 32px;
   background-image: linear-gradient(to bottom, #ff0000, #f91e96);
 
   > div {
@@ -18,6 +17,10 @@ export const Container = styled.footer`
     width: 100%;
 
     > a {
+      &:hover {
+        filter: brightness(0.75);
+      }
+
       svg {
         width: 40px;
         height: 40px;

@@ -7,9 +7,9 @@ import Youtube from '../../assets/images/youtube.svg'
 
 import { Container } from './styles'
 
-const Footer: React.FC = () => {
+const Footer: React.FC = ({ className }) => {
   return (
-    <Container>
+    <Container className={className}>
       <div>
         <a href="https://Instagram.com" rel="noreferrer" target="_blank">
           <Face />
