@@ -24,6 +24,8 @@ export const Container = styled.div`
     > img:first-child {
       height: 204px;
 
+      object-fit: cover;
+
       border-radius: 14px 14px 0 0px;
     }
 
