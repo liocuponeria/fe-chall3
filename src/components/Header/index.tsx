@@ -5,9 +5,9 @@ import Logo from '../../assets/images/logo.svg'
 
 import { Container } from './styles'
 
-const Header: React.FC = () => {
+const Header: React.FC = ({ className }) => {
   return (
-    <Container>
+    <Container className={className}>
       <Link href="/">
         <a>
           <Logo />
