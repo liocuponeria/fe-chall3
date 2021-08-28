@@ -9,7 +9,7 @@ const Selector: React.FC = () => {
 
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const [open, setOpen] = useState<boolean>(true)
+  const [open, setOpen] = useState<boolean>(false)
 
   const handleSelectorClick = () => {
     if (open) return setOpen(false)
@@ -17,8 +17,18 @@ const Selector: React.FC = () => {
     setOpen(true)
   }
 
-  const handleSelect = (selectedOption: string) => {
-    inputRef.current.value = selectedOption
+  const handleSelect = (
+    event: Event & {
+      target: HTMLElement
+    }
+  ) => {
+    let { target: selectedOption } = event
+
+    if (selectedOption.tagName === 'DIV') {
+      selectedOption = selectedOption.children[0] as HTMLElement
+    }
+
+    inputRef.current.value = selectedOption.innerText
   }
 
   return (
@@ -34,10 +44,7 @@ const Selector: React.FC = () => {
       </div>
       <Options areVisible={open} quantity={options.length}>
         {options.map(option => (
-          <div
-            onClick={e => handleSelect(e.target.children[0].innerText)}
-            key={option}
-          >
+          <div onClick={e => handleSelect(e)} key={option}>
             <span>{option}</span>
           </div>
         ))}

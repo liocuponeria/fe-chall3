@@ -33,12 +33,14 @@ export const Container = styled.div<ContainerProps>`
       outline: none;
       cursor: default;
 
-      overflow-y: visible;
+      background: none;
 
       font-family: Roboto, sans-serif;
       font-size: 1.6rem;
       font-weight: 700;
       color: ${props => props.theme.colors.highlight.pink};
+
+      overflow-y: visible;
 
       &::placeholder {
         font-size: 1.6rem;
@@ -63,7 +65,7 @@ export const Container = styled.div<ContainerProps>`
 
 export const Options = styled.div<OptionsProps>`
   position: absolute;
-  bottom: ${({ quantity }) => `calc(-${quantity} * 51px)`};
+  bottom: ${({ quantity }) => `calc((-${quantity} * 51px) - 1px)`};
 
   width: 100%;
 
@@ -86,8 +88,17 @@ export const Options = styled.div<OptionsProps>`
     height: 51px;
 
     padding: 15px 16px;
+    background: ${props => props.theme.colors.neutral.white};
 
     border-bottom: 1px solid rgba(249, 30, 150, 0.2);
+
+    &:hover {
+      border-bottom: 1px solid rgba(249, 30, 150, 0.4);
+
+      > span {
+        color: ${props => props.theme.colors.neutral.black};
+      }
+    }
 
     > span {
       font-size: 1.6rem;
