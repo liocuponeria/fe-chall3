@@ -8,7 +8,7 @@ export const Container = styled.div`
   border-radius: 14px;
 
   box-shadow: 0px 4px 10px #0000001f;
-  transition: all 0.15s;
+  transition: box-shadow 0.15s;
 
   &:hover {
     box-shadow: 0px 4px 10px #cccccc;

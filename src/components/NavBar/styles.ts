@@ -17,7 +17,7 @@ export const Container = styled.div`
     flex-direction: column-reverse;
     align-items: center;
 
-    transition: all 0.05s;
+    transition: filter 0.05s;
 
     &:hover {
       filter: brightness(0.75);
