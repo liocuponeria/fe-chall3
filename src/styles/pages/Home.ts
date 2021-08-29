@@ -16,6 +16,18 @@ export const Container = styled.main`
     'footer';
 
   position: relative;
+
+  @media (min-width: 486px) {
+    grid-template-rows: 60px 1fr 120px;
+  }
+
+  @media (min-width: 720px) {
+    grid-template-rows: 80px 1fr 120px;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-rows: 100px 1fr 120px;
+  }
 `
 
 export const StyledHeader = styled(Header)`
