@@ -110,7 +110,7 @@ export const StyledFooter = styled(Footer)`
 `
 
 export const StyledNavBar = styled(NavBar)`
-  position: sticky;
+  position: fixed;
   bottom: 0;
 
   height: 55px;
