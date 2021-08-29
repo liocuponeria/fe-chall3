@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   width: 100%;
-  height: 350px;
+  height: 100%;
 
   border: 1px solid #00000026;
   border-radius: 14px;
@@ -27,6 +27,34 @@ export const Container = styled.div`
       object-fit: cover;
 
       border-radius: 14px 14px 0 0px;
+
+      @media (min-width: 468px) {
+        height: 136px;
+      }
+
+      @media (min-width: 550px) {
+        height: 155px;
+      }
+
+      @media (min-width: 614px) {
+        height: 170px;
+      }
+
+      @media (min-width: 826px) {
+        height: 150px;
+      }
+
+      @media (min-width: 1024px) {
+        height: 160px;
+      }
+
+      @media (min-width: 1330px) {
+        height: 170px;
+      }
+
+      @media (min-width: 1480px) {
+        height: 204px;
+      }
     }
 
     > div:nth-child(2) {
@@ -38,6 +66,22 @@ export const Container = styled.div`
       margin: 12px 14px 26px 14px;
 
       height: 100%;
+
+      @media (min-width: 468px) {
+        margin: 12px 14px 18px 14px;
+      }
+
+      @media (min-width: 550px) {
+        margin: 12px 14px 26px 14px;
+      }
+
+      @media (min-width: 826px) {
+        margin: 12px 14px 18px 14px;
+      }
+
+      @media (min-width: 1080px) {
+        margin: 12px 14px 26px 14px;
+      }
 
       > div:first-of-type {
         display: flex;
@@ -53,6 +97,7 @@ export const Container = styled.div`
           font-size: 1.6rem;
           font-weight: 400;
           line-height: 1.9rem;
+          text-align: center;
           color: ${props => props.theme.colors.neutral.darkestGray};
         }
 

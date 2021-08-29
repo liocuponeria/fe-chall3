@@ -17,7 +17,7 @@ const Home: React.FC = () => {
       </Head>
 
       <StyledHeader />
-      <StyledDisplay />
+      <StyledDisplay productsQuantity={6} />
       <StyledFooter />
       <StyledNavBar />
     </Container>

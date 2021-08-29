@@ -5,7 +5,8 @@ export const Container = styled.button`
   align-items: center;
   justify-content: center;
 
-  width: 304px;
+  width: 100%;
+  max-width: 304px;
   height: 36px;
 
   background: linear-gradient(to bottom, #24c92b, #099f0f);

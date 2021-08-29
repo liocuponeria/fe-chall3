@@ -23,10 +23,6 @@ export const Container = styled.div`
   }
 
   > div.products {
-    margin-top: 20px;
-
-    > div {
-      margin-top: 20px;
-    }
+    display: grid;
   }
 `
