@@ -41,7 +41,7 @@ export const StyledDisplay = styled(Display)`
     grid-template-columns: 1fr;
     ${({ productsQuantity }) =>
       productsQuantity &&
-      `grid-template-rows: repeat(${productsQuantity / 2}, 350px);`}
+      `grid-template-rows: repeat(${productsQuantity}, 350px);`}
     grid-column-gap: 16px;
     grid-row-gap: 20px;
 
