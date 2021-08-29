@@ -41,6 +41,7 @@ export const Container = styled.div<ContainerProps>`
       color: ${props => props.theme.colors.highlight.pink};
 
       overflow-y: visible;
+      cursor: pointer;
 
       &::placeholder {
         font-size: 1.6rem;
