@@ -7,6 +7,24 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-between;
 
+    width: 100%;
+
+    @media (min-width: 468px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      > div:nth-child(2) {
+        max-width: 240px;
+      }
+    }
+
+    @media (min-width: 720px) {
+      > div:nth-child(2) {
+        max-width: 328px;
+      }
+    }
+
     > span {
       font-size: 2.2rem;
       font-weight: 700;
@@ -16,10 +34,11 @@ export const Container = styled.div`
 
       opacity: 0.9;
     }
-  }
 
-  > div:nth-of-type(2) {
-    margin-top: 12px;
+    > div:nth-child(2) {
+      margin-top: 12px;
+      width: 100%;
+    }
   }
 
   > div.products {

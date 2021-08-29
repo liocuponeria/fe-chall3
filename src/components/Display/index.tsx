@@ -10,8 +10,8 @@ const Display: React.FC = ({ className }) => {
     <Container className={className}>
       <div>
         <span>Sugestões para você</span>
+        <Selector />
       </div>
-      <Selector />
       <div className="products">
         <Product />
         <Product />
