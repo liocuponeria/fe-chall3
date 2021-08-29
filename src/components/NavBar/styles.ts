@@ -39,4 +39,36 @@ export const Container = styled.div`
       color: ${props => props.theme.colors.neutral.gray};
     }
   }
+
+  @media (min-width: 416px) {
+    padding: 12px 25px;
+  }
+
+  @media (min-width: 826px) {
+    padding: 18px 130px 21px 130px;
+
+    box-shadow: 0px 3px 6px #00000029;
+
+    > a {
+      flex-direction: row-reverse;
+
+      &:first-child {
+        > svg {
+          margin-top: -4.5px;
+        }
+      }
+
+      > h2 {
+        font-size: 1.6rem;
+        color: ${props => props.theme.colors.neutral.darkestGray};
+      }
+
+      > svg {
+        margin-top: -2px;
+        margin-right: 5px;
+
+        color: ${props => props.theme.colors.neutral.darkestGray};
+      }
+    }
+  }
 `

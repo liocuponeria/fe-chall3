@@ -37,6 +37,10 @@ export const StyledDisplay = styled(Display)`
   grid-area: display;
   margin: 18px 4.5% 40px 4.5%;
 
+  @media (min-width: 826px) {
+    margin-top: calc(55px + 18px);
+  }
+
   > div.products {
     grid-template-columns: 1fr;
     ${({ productsQuantity }) =>
@@ -100,7 +104,9 @@ export const StyledDisplay = styled(Display)`
 export const StyledFooter = styled(Footer)`
   grid-area: footer;
 
-  margin-bottom: -55px;
+  @media (max-width: 826px) {
+    margin-bottom: -55px;
+  }
 `
 
 export const StyledNavBar = styled(NavBar)`
@@ -108,4 +114,16 @@ export const StyledNavBar = styled(NavBar)`
   bottom: 0;
 
   height: 55px;
+
+  @media (min-width: 826px) {
+    position: absolute;
+    top: 80px;
+  }
+
+  @media (min-width: 1080px) {
+    position: absolute;
+    top: 100px;
+
+    height: 60px;
+  }
 `
