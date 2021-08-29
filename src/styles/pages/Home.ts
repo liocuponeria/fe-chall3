@@ -23,7 +23,7 @@ export const StyledHeader = styled(Header)`
 `
 export const StyledDisplay = styled(Display)`
   grid-area: display;
-  margin: 18px 4.5% 30px 4.5%;
+  margin: 18px 4.5% 40px 4.5%;
 
   > div.products {
     grid-template-columns: 1fr;
@@ -58,26 +58,29 @@ export const StyledDisplay = styled(Display)`
       grid-template-columns: repeat(3, 1fr);
       ${({ productsQuantity }) =>
         productsQuantity &&
-        `grid-template-rows: repeat(${productsQuantity / 2}, 300px);`}
+        `grid-template-rows: repeat(${productsQuantity / 3}, 300px);`}
     }
 
     @media (min-width: 1080px) {
       ${({ productsQuantity }) =>
         productsQuantity &&
-        `grid-template-rows: repeat(${productsQuantity / 2}, 300px);`}
+        `grid-template-rows: repeat(${productsQuantity / 3}, 300px);`}
     }
 
     @media (min-width: 1240px) {
       grid-template-columns: repeat(4, 1fr);
       ${({ productsQuantity }) =>
         productsQuantity &&
-        `grid-template-rows: repeat(${productsQuantity / 2}, 320px);`}
+        `grid-template-rows: repeat(${Math.ceil(
+          productsQuantity / 4
+        )}, 320px);`}
     }
-
     @media (min-width: 1480px) {
       ${({ productsQuantity }) =>
         productsQuantity &&
-        `grid-template-rows: repeat(${productsQuantity / 2}, 350px);`}
+        `grid-template-rows: repeat(${Math.ceil(
+          productsQuantity / 4
+        )}, 350px);`}
     }
   }
 `
