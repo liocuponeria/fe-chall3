@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const Container = styled.button`
+interface ContainerProps {
+  filled: boolean
+}
+
+export const Container = styled.button<ContainerProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,4 +37,33 @@ export const Container = styled.button`
     line-height: 3.6rem;
     color: #ffffff;
   }
+
+  ${({ filled }) =>
+    !filled &&
+    `
+    width: 98%;
+
+    background: none;
+
+    border: 1px solid #707070;
+
+    box-shadow: 0px 1px 8px #00000029;
+
+    > :first-child {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 3.6rem;
+      color: #707070;
+    }
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+
+    &:active {
+      filter: brightness(0.7);
+    }
+
+`}
 `
