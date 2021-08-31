@@ -6,7 +6,7 @@ import { Container } from './styles'
 interface ButtonProps {
   text: string
   href?: string
-  filled: boolean
+  filled?: boolean
 }
 
 const Button: React.FC<ButtonProps> = ({ text, href, filled = true }) => {
