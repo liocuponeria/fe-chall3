@@ -2,15 +2,19 @@ import React from 'react'
 
 import { Container, Bar, Circle } from './styles'
 
-const Header: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
-  className
+interface StepsProps {
+  numberOfSteps: number
+  currentStep: number
+}
+
+const Steps: React.FC<StepsProps & React.HTMLAttributes<HTMLDivElement>> = ({
+  className,
+  numberOfSteps,
+  currentStep
 }) => {
   const steps = []
 
-  const numberOfSteps = 3
-  const currentStep = 1
-
-  const generateSteps = (numberOfSteps: number) => {
+  const generateSteps = () => {
     let generatingStep = 1
 
     while (generatingStep <= numberOfSteps) {
@@ -24,12 +28,12 @@ const Header: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
     }
   }
 
-  generateSteps(numberOfSteps)
+  generateSteps()
 
   return (
     <Container className={className}>
       {steps.map((step, index) =>
-        index <= currentStep ? (
+        index + 1 <= currentStep ? (
           <div className="active" key={step}>
             <Bar />
             <Circle>
@@ -49,4 +53,4 @@ const Header: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   )
 }
 
-export default Header
+export default Steps
