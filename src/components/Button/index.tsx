@@ -5,13 +5,19 @@ import { Container } from './styles'
 
 interface ButtonProps {
   text: string
+  onClick?: () => void
   href?: string
   filled?: boolean
 }
 
-const Button: React.FC<ButtonProps> = ({ text, href, filled = true }) => {
+const Button: React.FC<ButtonProps> = ({
+  text,
+  onClick,
+  href,
+  filled = true
+}) => {
   return (
-    <Container filled={filled}>
+    <Container onClick={onClick} filled={filled}>
       {href ? (
         <Link href={href}>
           <a>{text}</a>
