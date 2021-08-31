@@ -13,6 +13,7 @@ const theme = {
       red: '#FF0000',
       pink: '#F91E96',
       green: '#4CAF50',
+      orange: '#FB135F',
       eletricGreen: '#24C92B',
       darkGreen: '#099F0F'
     }
