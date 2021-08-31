@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import Header from '../../components/Header'
-import SignInForm from '../../components/SignInForm'
+import Cart from '../../components/Cart'
 import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer'
 
@@ -12,7 +12,7 @@ export const Container = styled.main`
 
   grid-template-areas:
     'header'
-    'form'
+    'cart'
     'footer';
 
   position: relative;
@@ -33,17 +33,20 @@ export const Container = styled.main`
 export const StyledHeader = styled(Header)`
   grid-area: header;
 `
-export const StyledForm = styled(SignInForm)`
-  grid-area: form;
+export const StyledCart = styled(Cart)`
+  grid-area: cart;
   justify-self: center;
 
-  margin: 20px 18px 14px 18px;
+  margin: 12px 16px 48px 16px;
 
   width: 100%;
 
   @media (min-width: 826px) {
-    margin-top: calc(55px + 30px);
-    margin-bottom: 100px;
+    margin-top: calc(55px + 32px);
+  }
+
+  @media (min-width: 1260px) {
+    width: calc(100% - 120px);
   }
 `
 

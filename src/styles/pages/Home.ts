@@ -120,7 +120,7 @@ export const StyledNavBar = styled(NavBar)`
     top: 80px;
   }
 
-  @media (min-width: 1080px) {
+  @media (min-width: 1024px) {
     position: absolute;
     top: 100px;
 
