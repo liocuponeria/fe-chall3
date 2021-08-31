@@ -2,17 +2,25 @@ import React from 'react'
 
 import { Container, Bar, Circle } from './styles'
 
-const Header: React.FC = ({ className }) => {
-  const numberOfSteps = 3
+const Header: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className
+}) => {
   const steps = []
 
+  const numberOfSteps = 3
+  const currentStep = 1
+
   const generateSteps = (numberOfSteps: number) => {
-    let stepIn = 1
+    let generatingStep = 1
 
-    while (stepIn <= numberOfSteps) {
-      steps.push(stepIn < 10 ? '0' + stepIn.toString() : stepIn.toString())
+    while (generatingStep <= numberOfSteps) {
+      steps.push(
+        generatingStep < 10
+          ? '0' + generatingStep.toString()
+          : generatingStep.toString()
+      )
 
-      stepIn += 1
+      generatingStep += 1
     }
   }
 
@@ -20,14 +28,23 @@ const Header: React.FC = ({ className }) => {
 
   return (
     <Container className={className}>
-      {steps.map(step => (
-        <div key={step}>
-          <Bar />
-          <Circle>
-            <span>{step}</span>
-          </Circle>
-        </div>
-      ))}
+      {steps.map((step, index) =>
+        index <= currentStep ? (
+          <div className="active" key={step}>
+            <Bar />
+            <Circle>
+              <span>{step}</span>
+            </Circle>
+          </div>
+        ) : (
+          <div key={step}>
+            <Bar />
+            <Circle>
+              <span>{step}</span>
+            </Circle>
+          </div>
+        )
+      )}
     </Container>
   )
 }

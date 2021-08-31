@@ -24,13 +24,25 @@ export const Container = styled.div`
       width: 35px;
     }
   }
+
+  > div.active {
+    //The Bar
+    > div:first-child {
+      background: linear-gradient(to right, #24c92b, #099f0f);
+    }
+
+    //The Circle
+    > div:nth-child(2) {
+      background: linear-gradient(to left, #24c92b, #099f0f);
+    }
+  }
 `
 
 export const Bar = styled.div`
   width: 100%;
   height: 5px;
 
-  background: linear-gradient(to right, #24c92b, #099f0f);
+  background: #b2b2b2;
 `
 
 export const Circle = styled.div`
@@ -43,7 +55,7 @@ export const Circle = styled.div`
 
   height: 100%;
 
-  background: linear-gradient(to left, #24c92b, #099f0f);
+  background: #b2b2b2;
 
   border-radius: 50%;
 
