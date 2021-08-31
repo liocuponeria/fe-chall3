@@ -12,7 +12,7 @@ export const Container = styled.main`
 
   grid-template-areas:
     'header'
-    'display'
+    'product'
     'footer';
 
   position: relative;
@@ -34,7 +34,7 @@ export const StyledHeader = styled(Header)`
   grid-area: header;
 `
 export const StyledProduct = styled(Product)`
-  grid-area: display;
+  grid-area: product;
   margin: 20px 4.5% 24px 4.5%;
 
   @media (min-width: 416px) {
