@@ -31,6 +31,7 @@ export const Container = styled.div`
       line-height: 3rem;
       color: ${props => props.theme.colors.neutral.darkestGray};
       text-align: center;
+      text-transform: capitalize;
 
       opacity: 0.9;
     }

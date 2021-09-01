@@ -27,7 +27,7 @@ const Home: React.FC<HomeProps> = ({ products, category }) => {
       </Head>
 
       <StyledHeader />
-      <StyledDisplay products={products} />
+      <StyledDisplay products={products} title={category} />
       <StyledFooter />
       <StyledNavBar />
     </Container>
