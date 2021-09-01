@@ -40,6 +40,25 @@ export const Container = styled.div`
     }
   }
 
+  > a.active {
+    &:hover {
+      filter: brightness(1);
+    }
+
+    &:active {
+      filter: brightness(1);
+    }
+
+    > h2 {
+      color: ${props => props.theme.colors.highlight.red};
+      opacity: 0.9;
+    }
+
+    > svg {
+      color: ${props => props.theme.colors.highlight.red};
+    }
+  }
+
   @media (min-width: 416px) {
     padding: 12px 25px;
   }
