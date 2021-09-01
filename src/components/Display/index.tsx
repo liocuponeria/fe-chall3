@@ -9,15 +9,16 @@ import ProductType from '../../types/Product'
 
 interface DisplayProps {
   products: ProductType[]
+  title: string
 }
 
 const Display: React.FC<
   DisplayProps & React.HTMLAttributes<HTMLDivElement>
-> = ({ className, products }) => {
+> = ({ className, products, title }) => {
   return (
     <Container className={className}>
       <div>
-        <span>Sugestões para você</span>
+        {title ? <span>{title}</span> : <span>Sugestões para você</span>}
         <Selector />
       </div>
       <div className="products">
