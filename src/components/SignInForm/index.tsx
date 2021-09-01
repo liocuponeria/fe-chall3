@@ -30,7 +30,7 @@ const SignInForm: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
             onClick={() => setCurrentStep(prevState => prevState + 1)}
           />
         ) : (
-          <Button text="Cadastrar" />
+          <Button text="Cadastrar" href="/login" />
         )}
         {currentStep !== 1 && (
           <Button
