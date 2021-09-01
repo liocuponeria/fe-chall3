@@ -43,9 +43,9 @@ export const StyledDisplay = styled(Display)`
 
   > div.products {
     grid-template-columns: 1fr;
-    ${({ productsQuantity }) =>
-      productsQuantity &&
-      `grid-template-rows: repeat(${productsQuantity}, 350px);`}
+    ${({ products }) =>
+      products.length &&
+      `grid-template-rows: repeat(${products.length}, 350px);`}
     grid-column-gap: 16px;
     grid-row-gap: 20px;
 
@@ -53,50 +53,46 @@ export const StyledDisplay = styled(Display)`
 
     @media (min-width: 468px) {
       grid-template-columns: repeat(2, 1fr);
-      ${({ productsQuantity }) =>
-        productsQuantity &&
-        `grid-template-rows: repeat(${productsQuantity / 2}, 290px);`}
+      ${({ products }) =>
+        products.length &&
+        `grid-template-rows: repeat(${products.length / 2}, 290px);`}
     }
 
     @media (min-width: 550px) {
-      ${({ productsQuantity }) =>
-        productsQuantity &&
-        `grid-template-rows: repeat(${productsQuantity / 2}, 310px);`}
+      ${({ products }) =>
+        products.length &&
+        `grid-template-rows: repeat(${products.length / 2}, 310px);`}
     }
 
     @media (min-width: 720px) {
-      ${({ productsQuantity }) =>
-        productsQuantity &&
-        `grid-template-rows: repeat(${productsQuantity / 2}, 320px);`}
+      ${({ products }) =>
+        products.length &&
+        `grid-template-rows: repeat(${products.length / 2}, 320px);`}
     }
 
     @media (min-width: 826px) {
       grid-template-columns: repeat(3, 1fr);
-      ${({ productsQuantity }) =>
-        productsQuantity &&
-        `grid-template-rows: repeat(${productsQuantity / 3}, 300px);`}
+      ${({ products }) =>
+        products.length &&
+        `grid-template-rows: repeat(${products.length / 3}, 300px);`}
     }
 
     @media (min-width: 1080px) {
-      ${({ productsQuantity }) =>
-        productsQuantity &&
-        `grid-template-rows: repeat(${productsQuantity / 3}, 300px);`}
+      ${({ products }) =>
+        products.length &&
+        `grid-template-rows: repeat(${products.length / 3}, 300px);`}
     }
 
     @media (min-width: 1240px) {
       grid-template-columns: repeat(4, 1fr);
-      ${({ productsQuantity }) =>
-        productsQuantity &&
-        `grid-template-rows: repeat(${Math.ceil(
-          productsQuantity / 4
-        )}, 320px);`}
+      ${({ products }) =>
+        products.length &&
+        `grid-template-rows: repeat(${Math.ceil(products.length / 4)}, 320px);`}
     }
     @media (min-width: 1480px) {
-      ${({ productsQuantity }) =>
-        productsQuantity &&
-        `grid-template-rows: repeat(${Math.ceil(
-          productsQuantity / 4
-        )}, 350px);`}
+      ${({ products }) =>
+        products.length &&
+        `grid-template-rows: repeat(${Math.ceil(products.length / 4)}, 350px);`}
     }
   }
 `
