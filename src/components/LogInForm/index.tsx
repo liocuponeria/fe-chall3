@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import { CartContext } from '../../contexts/Cart'
 
 import Input from '../Input'
 import Button from '../Button'
@@ -9,6 +11,8 @@ import { Container } from './styles'
 const SignInForm: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className
 }) => {
+  const { cart } = useContext(CartContext)
+
   return (
     <Container className={className}>
       <span>Entrar</span>
@@ -16,7 +20,11 @@ const SignInForm: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
         <Input name="email" placeholder="e-mail" />
         <Input name="password" placeholder="Senha" />
       </div>
-      <Button text="Entrar" />
+      {cart ? (
+        <Button text="Entrar" href="cart" />
+      ) : (
+        <Button text="Entrar" href="/" />
+      )}
       <p>
         Não tem uma conta?
         <DecoratedLink text="cadastrar" href="/signin" />
