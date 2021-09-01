@@ -22,6 +22,7 @@ export const Container = styled.div`
     height: 100%;
 
     > img:first-child {
+      width: 100%;
       height: 204px;
 
       object-fit: cover;
@@ -94,11 +95,15 @@ export const Container = styled.div`
         }
 
         > h3 {
+          max-height: 19px;
+
           font-size: 1.6rem;
           font-weight: 400;
           line-height: 1.9rem;
           text-align: center;
           color: ${props => props.theme.colors.neutral.darkestGray};
+
+          overflow-y: hidden;
         }
 
         > span {
