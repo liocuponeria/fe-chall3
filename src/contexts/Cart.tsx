@@ -19,15 +19,34 @@ const CartContext = createContext({} as CartContextData)
 const CartProvider = ({ children }: CartProviderProps) => {
   const router = useRouter()
 
-  const [cart, setCart] = useState<CartType>()
+  const [cart, setCart] = useState<CartType>([])
 
   const addToCart = (product: ProductType) => {
     const { id, image, title, price } = product
 
-    const newCart = cart
-    newCart.push({ quantity: 1, id, image, title, price })
+    const productToInsert = { quantity: 1, id, image, title, price }
+    const newCart = cart || ([] as CartType)
+
+    if (newCart !== []) {
+      const matchingProductIndex = newCart.findIndex(
+        cartProduct => cartProduct.id === product.id
+      )
+
+      console.log(newCart[matchingProductIndex])
+
+      if (matchingProductIndex >= 0) {
+        newCart[matchingProductIndex] = {
+          ...productToInsert,
+          quantity: newCart[matchingProductIndex].quantity + 1
+        }
+      } else {
+        newCart.push(productToInsert)
+      }
+    }
 
     setCart(newCart)
+
+    console.log(newCart)
 
     router.push('/signin')
   }
