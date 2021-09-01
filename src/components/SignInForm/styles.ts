@@ -35,6 +35,10 @@ export const Container = styled.div<ContainerProps>`
       > div {
         margin-top: 10px;
       }
+
+      > div:first-child {
+        margin-top: 0;
+      }
     }
 
     ${({ currentStep }) => `
