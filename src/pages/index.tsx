@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 
-import api from '../services/api'
+import API from '../services/API'
+import Alternative from '../services/Alternative'
 
 import {
   Container,
@@ -17,7 +18,14 @@ const Home: React.FC = () => {
   const [products, setProducts] = useState<ProductType[]>(null)
 
   useEffect(() => {
-    api.get('/products?limit=18').then(response => setProducts(response.data))
+    API.get('/products?limit=20')
+      .then(response => setProducts(response.data))
+      .catch(err => {
+        console.error('Utilizando API secundária:' + err)
+        Alternative.get('/products')
+          .then(response => setProducts(response.data))
+          .catch(err => console.error(err))
+      })
   }, [])
 
   return (
