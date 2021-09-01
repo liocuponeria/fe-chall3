@@ -9,7 +9,7 @@ import {
   StyledFooter
 } from '../styles/pages/LogIn'
 
-const SignIn: React.FC = () => {
+const LogIn: React.FC = () => {
   return (
     <Container>
       <Head>
@@ -24,4 +24,4 @@ const SignIn: React.FC = () => {
   )
 }
 
-export default SignIn
+export default LogIn
