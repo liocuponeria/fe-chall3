@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
 import API from '../services/API'
@@ -14,20 +15,11 @@ import {
 
 import ProductType from '../types/Product'
 
-const Home: React.FC = () => {
-  const [products, setProducts] = useState<ProductType[]>(null)
+interface HomeProps {
+  products: ProductType[]
+}
 
-  useEffect(() => {
-    API.get('/products?limit=20')
-      .then(response => setProducts(response.data))
-      .catch(err => {
-        console.error('Utilizando API secundária:' + err)
-        Alternative.get('/products')
-          .then(response => setProducts(response.data))
-          .catch(err => console.error(err))
-      })
-  }, [])
-
+const Home: React.FC<HomeProps> = ({ products }) => {
   return (
     <Container>
       <Head>
@@ -40,6 +32,28 @@ const Home: React.FC = () => {
       <StyledNavBar />
     </Container>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  let products = []
+
+  try {
+    await API.get('/products?limit=20').then(
+      response => (products = response.data)
+    )
+  } catch (error) {
+    console.error('Utilizando API secundária:' + error.message)
+
+    try {
+      await Alternative.get('/products').then(
+        response => (products = response.data)
+      )
+    } catch (error) {
+      console.error(error.message)
+    }
+  }
+
+  return { props: { products }, revalidate: 60 * 60 }
 }
 
 export default Home
