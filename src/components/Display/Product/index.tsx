@@ -15,7 +15,7 @@ interface ProductProps {
 const Product: React.FC<ProductProps> = ({ id, image, title, price }) => {
   return (
     <Container>
-      <Link href={`product/${id}`}>
+      <Link href={`/product/${id}`}>
         <a>
           <img src={image} />
           <div>
