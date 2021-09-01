@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 
@@ -20,6 +20,28 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({ products, category }) => {
+  const [currentProducts, setCurrentProducts] = useState<ProductType[]>(
+    products
+  )
+
+  const filterProducts = async (query: string) => {
+    let sortedProducts = null
+
+    switch (query) {
+      case 'Menor preço':
+        sortedProducts = products.sort((a, b) => a.price - b.price)
+        break
+      case 'A - Z':
+        sortedProducts = products.sort((a, b) => a.title.localeCompare(b.title))
+        break
+      case 'Mais recentes':
+        sortedProducts = products
+        break
+    }
+
+    await setCurrentProducts(sortedProducts)
+  }
+
   return (
     <Container>
       <Head>
@@ -27,7 +49,11 @@ const Home: React.FC<HomeProps> = ({ products, category }) => {
       </Head>
 
       <StyledHeader />
-      <StyledDisplay products={products} title={category} />
+      <StyledDisplay
+        products={currentProducts}
+        title={category}
+        filterProducts={filterProducts}
+      />
       <StyledFooter />
       <StyledNavBar />
     </Container>

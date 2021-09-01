@@ -4,7 +4,11 @@ import { IoChevronDownSharp as Chevron } from 'react-icons/io5'
 
 import { Container, Options } from './styles'
 
-const Selector: React.FC = () => {
+interface SelectorProps {
+  filterProducts: (query: string) => void
+}
+
+const Selector: React.FC<SelectorProps> = ({ filterProducts }) => {
   const options: string[] = ['Menor preço', 'A - Z', 'Mais recentes']
 
   const inputRef = useRef<HTMLInputElement>(null)
@@ -29,6 +33,8 @@ const Selector: React.FC = () => {
     }
 
     inputRef.current.value = selectedOption.innerText
+
+    filterProducts(inputRef.current.value)
   }
 
   return (

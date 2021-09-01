@@ -9,17 +9,18 @@ import ProductType from '../../types/Product'
 
 interface DisplayProps {
   products: ProductType[]
-  title: string
+  title?: string
+  filterProducts: (query: string) => void
 }
 
 const Display: React.FC<
   DisplayProps & React.HTMLAttributes<HTMLDivElement>
-> = ({ className, products, title }) => {
+> = ({ className, products, title, filterProducts }) => {
   return (
     <Container className={className}>
       <div>
         {title ? <span>{title}</span> : <span>Sugestões para você</span>}
-        <Selector />
+        <Selector filterProducts={filterProducts} />
       </div>
       <div className="products">
         {products !== null &&
