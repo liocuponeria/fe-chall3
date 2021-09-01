@@ -1,25 +1,41 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { FaTrash as Trash } from 'react-icons/fa'
+
+import { CartContext } from '../../../contexts/Cart'
 
 import QuantitySelector from './QuantitySelector'
 
 import { Container } from './styles'
 
-const Product: React.FC = () => {
+interface ProductProps {
+  product: {
+    id: number
+    quantity: number
+    image: string
+    title: string
+    price: number
+  }
+}
+
+const Product: React.FC<ProductProps> = ({ product }) => {
+  const { removeFromCart } = useContext(CartContext)
+
+  const { id, quantity, image, title, price } = product
+
   return (
     <Container>
       <div>
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" />
+        <img src={image} />
         <div>
-          <h3>Boné Bordado Harry Potter Grifinoria</h3>
+          <h3>{title}</h3>
         </div>
       </div>
       <div>
         <QuantitySelector />
         <div>
-          <Trash />
-          <span>R$ 30,00</span>
+          <Trash onClick={() => removeFromCart(id)} />
+          <span>R$ {price}</span>
         </div>
       </div>
     </Container>
