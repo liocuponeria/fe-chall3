@@ -13,7 +13,7 @@ const Cart: React.FC = () => {
   return (
     <Container>
       <Head>
-        <title>cart</title>
+        <title>Cart</title>
       </Head>
 
       <StyledHeader />
