@@ -24,21 +24,15 @@ const CartProvider = ({ children }: CartProviderProps) => {
 
     let newCart = cart || ([] as CartType)
 
-    console.log(cart)
-
     if (!cart || cart.length === 0) newCart = [productToInsert]
 
     let matchingProductIndex = -1
-
-    console.log(cart)
 
     if (cart.length > 0) {
       matchingProductIndex = cart.findIndex(
         cartProduct => cartProduct.id === product.id
       )
     }
-
-    console.log(matchingProductIndex)
 
     if (matchingProductIndex >= 0) {
       newCart[matchingProductIndex] = {
@@ -48,7 +42,6 @@ const CartProvider = ({ children }: CartProviderProps) => {
     }
 
     if (matchingProductIndex < 0 && cart.length > 0) {
-      console.log('true')
       newCart.push(productToInsert)
     }
 
