@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
+
+import api from '../services/api'
 
 import {
   Container,
@@ -9,7 +11,15 @@ import {
   StyledFooter
 } from '../styles/pages/Home'
 
+import ProductType from '../types/Product'
+
 const Home: React.FC = () => {
+  const [products, setProducts] = useState<ProductType[]>(null)
+
+  useEffect(() => {
+    api.get('/products?limit=18').then(response => setProducts(response.data))
+  }, [])
+
   return (
     <Container>
       <Head>
@@ -17,7 +27,7 @@ const Home: React.FC = () => {
       </Head>
 
       <StyledHeader />
-      <StyledDisplay productsQuantity={6} />
+      <StyledDisplay products={products} />
       <StyledFooter />
       <StyledNavBar />
     </Container>
