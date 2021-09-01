@@ -32,8 +32,6 @@ const CartProvider = ({ children }: CartProviderProps) => {
         cartProduct => cartProduct.id === product.id
       )
 
-      console.log(newCart[matchingProductIndex])
-
       if (matchingProductIndex >= 0) {
         newCart[matchingProductIndex] = {
           ...productToInsert,
@@ -45,8 +43,6 @@ const CartProvider = ({ children }: CartProviderProps) => {
     }
 
     setCart(newCart)
-
-    console.log(newCart)
 
     router.push('/signin')
   }
