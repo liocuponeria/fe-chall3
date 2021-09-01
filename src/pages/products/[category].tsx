@@ -23,7 +23,7 @@ const Home: React.FC<HomeProps> = ({ products, category }) => {
   return (
     <Container>
       <Head>
-        <title>{category}</title>
+        <title>{category.charAt(0).toUpperCase() + category.slice(1)}</title>
       </Head>
 
       <StyledHeader />
