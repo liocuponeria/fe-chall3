@@ -13,6 +13,13 @@ export const Container = styled.div<ContainerProps>`
   border: 1px solid ${props => props.theme.colors.neutral.darkerGray};
   border-radius: 4px;
 
+  transition: all 0.1s;
+
+  &:hover,
+  &:active {
+    border: 1px solid ${props => props.theme.colors.neutral.darkestGray};
+  }
+
   ${({ error }) => error && 'border: 1px solid #ffa401;'}
 
   > input {
