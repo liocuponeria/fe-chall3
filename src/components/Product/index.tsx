@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import { CartContext } from '../../contexts/Cart'
 
 import Button from '../Button'
 
@@ -13,6 +15,8 @@ interface ProductProps {
 const Product: React.FC<
   ProductProps & React.HTMLAttributes<HTMLDivElement>
 > = ({ className, product }) => {
+  const { addToCart } = useContext(CartContext)
+
   const { image, title, price, description } = product
 
   return (
@@ -26,7 +30,10 @@ const Product: React.FC<
           <span>R${price}</span>
           <p>{description}</p>
         </div>
-        <Button text="Adicionar ao carrinho" href="/signin" />
+        <Button
+          text="Adicionar ao carrinho"
+          onClick={() => addToCart(product)}
+        />
       </div>
     </Container>
   )
