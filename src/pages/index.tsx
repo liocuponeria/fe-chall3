@@ -3,7 +3,6 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
 import API from '../services/API'
-import Alternative from '../services/Alternative'
 
 import {
   Container,
@@ -42,15 +41,7 @@ export const getStaticProps: GetStaticProps = async () => {
       response => (products = response.data)
     )
   } catch (error) {
-    console.error('Utilizando API secundária:' + error.message)
-
-    try {
-      await Alternative.get('/products').then(
-        response => (products = response.data)
-      )
-    } catch (error) {
-      console.error(error.message)
-    }
+    console.error(error.message)
   }
 
   return { props: { products }, revalidate: 60 * 60 }

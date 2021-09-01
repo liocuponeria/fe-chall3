@@ -1,10 +1,9 @@
 type Product = {
-  id: number | string
+  id: number
   title: string
   image: string
   price: number
-  category?: string
-  categoryId?: string
+  category: string
 }
 
 export default Product
