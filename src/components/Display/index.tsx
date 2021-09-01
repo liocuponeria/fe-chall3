@@ -5,9 +5,15 @@ import Product from './Product'
 
 import { Container } from './styles'
 
-const Display: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
-  className
-}) => {
+import ProductType from '../../types/Product'
+
+interface DisplayProps {
+  products: ProductType[]
+}
+
+const Display: React.FC<
+  DisplayProps & React.HTMLAttributes<HTMLDivElement>
+> = ({ className, products }) => {
   return (
     <Container className={className}>
       <div>
@@ -15,12 +21,16 @@ const Display: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
         <Selector />
       </div>
       <div className="products">
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        {products !== null &&
+          products.map(product => (
+            <Product
+              key={product.id}
+              id={product.id}
+              image={product.image}
+              title={product.title}
+              price={product.price}
+            />
+          ))}
       </div>
     </Container>
   )
