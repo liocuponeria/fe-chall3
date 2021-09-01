@@ -32,7 +32,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
         </div>
       </div>
       <div>
-        <QuantitySelector />
+        <QuantitySelector quantity={quantity} />
         <div>
           <Trash onClick={() => removeFromCart(id)} />
           <span>R$ {price}</span>
