@@ -4,7 +4,9 @@ import Button from '../Button'
 
 import { Container } from './styles'
 
-const Product: React.FC = ({ className }) => {
+const Product: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className
+}) => {
   return (
     <Container className={className}>
       <div>

@@ -7,7 +7,9 @@ import Youtube from '../../assets/images/youtube.svg'
 
 import { Container } from './styles'
 
-const Footer: React.FC = ({ className }) => {
+const Footer: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className
+}) => {
   return (
     <Container className={className}>
       <div>

@@ -5,7 +5,9 @@ import Product from './Product'
 
 import { Container } from './styles'
 
-const Display: React.FC = ({ className }) => {
+const Display: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className
+}) => {
   return (
     <Container className={className}>
       <div>

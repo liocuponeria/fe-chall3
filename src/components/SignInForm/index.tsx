@@ -9,7 +9,9 @@ import DecoratedLink from '../DecoratedLink'
 
 import { Container } from './styles'
 
-const SignInForm: React.FC = ({ className }) => {
+const SignInForm: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className
+}) => {
   const [currentStep, setCurrentStep] = useState<number>(1)
 
   return (

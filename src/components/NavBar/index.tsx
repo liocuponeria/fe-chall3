@@ -10,7 +10,9 @@ import Accessories from '../../assets/images/acessorios.svg'
 
 import { Container } from './styles'
 
-const Home: React.FC = ({ className }) => {
+const Home: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className
+}) => {
   return (
     <Container className={className}>
       <Link href="/">

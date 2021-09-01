@@ -6,7 +6,9 @@ import DecoratedLink from '../DecoratedLink'
 
 import { Container } from './styles'
 
-const SignInForm: React.FC = ({ className }) => {
+const SignInForm: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className
+}) => {
   return (
     <Container className={className}>
       <span>Entrar</span>

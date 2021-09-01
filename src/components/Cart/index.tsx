@@ -5,7 +5,9 @@ import Button from '../Button'
 
 import { Container } from './styles'
 
-const Cart: React.FC = ({ className }) => {
+const Cart: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className
+}) => {
   return (
     <Container className={className}>
       <span>Meu carrinho</span>
