@@ -21,7 +21,7 @@ const SignInForm: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
         <Input name="password" placeholder="Senha" />
       </div>
       {cart ? (
-        <Button text="Entrar" href="cart" />
+        <Button text="Entrar" href="/cart" />
       ) : (
         <Button text="Entrar" href="/" />
       )}
