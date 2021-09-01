@@ -36,6 +36,7 @@ export const Container = styled.div`
 
     @media (min-width: 1260px) {
       flex-direction: row;
+      align-items: flex-start;
 
       > div:nth-child(2) {
         max-width: 330px;
@@ -44,6 +45,15 @@ export const Container = styled.div`
 
     > div:first-child {
       margin-top: 15px;
+      width: 100%;
+
+      > div {
+        margin-top: 16px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
     }
 
     > div:nth-child(2) {
