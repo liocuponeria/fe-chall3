@@ -43,7 +43,7 @@ const Home: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
           <Accessories />
         </a>
       </Link>
-      <Link href="/products/cart">
+      <Link href="/cart">
         <a className={path.includes('/cart') && 'active'}>
           <h2>Meu carrinho</h2>
           <Cart />
