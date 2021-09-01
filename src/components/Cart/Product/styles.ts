@@ -31,7 +31,7 @@ export const Container = styled.div`
 
     width: 100%;
 
-    padding: 27px 18px 27px 11px;
+    padding: 27px 18px 27px 15px;
   }
 
   > div:first-of-type {
@@ -40,8 +40,8 @@ export const Container = styled.div`
     max-height: 90px;
 
     > img {
-      width: 140px;
       height: 100%;
+      max-height: 90px;
 
       border-radius: 14px;
 
