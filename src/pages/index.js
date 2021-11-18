@@ -1,21 +1,6 @@
 import Head from 'next/head'
-
-import Logo from '../assets/logo.svg';
-import Facebook from '../assets/face.svg';
-import Instagram from '../assets/insta.svg';
-import Twitter from '../assets/twitter.svg';
-import Youtube from '../assets/youtube.svg';
-
-
-
-import Inicio from '../assets/inicio.svg';
-import Roupas from '../assets/roupas.svg';
-import Eletronico from '../assets/eletronicos.svg';
-import Acessorio from '../assets/acessorios.svg';
-
-
-
-import Link from 'next/link';
+import Footer from '../components/Footer/Footer';
+import Header from '../components/Header/Header';
 
 export default function Home({lista}) {
 	return (
@@ -24,26 +9,7 @@ export default function Home({lista}) {
 				<title>Cuponeria</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<header className="header">
-				<div className="header__logo">
-					<div className="container">
-						<div className="logo">
-							<a href="/"><Logo /></a>
-						</div>
-					</div>
-				</div>
-				<div className="header__menu">
-					<div className="container">
-						<ul className="header__menu--nav">
-							<li><Inicio/><Link href="/">início</Link></li>
-							<li><Roupas/><Link href="/roupas">roupas</Link></li>
-							<li><Eletronico/><Link href="/eletronico">eletrônico</Link></li>
-							<li><Acessorio/><Link href="/acessorio">acessório</Link></li>
-							<li><Inicio/><Link href="/meu-carrinho">meu carrinho</Link></li>
-						</ul>
-					</div>
-				</div>
-			</header>
+			<Header categoria={lista} />
 			<div className="container">
 				<main className="main"> 
 					<div className="box">
@@ -71,16 +37,7 @@ export default function Home({lista}) {
 					</div>
 				</main>
 			</div>
-			<footer className="footer">
-				<div className="container">
-					<div className="footer__socialMidia">
-						<a href="https://www.facebook.com/Cuponeria/" target="_blank"><Facebook /></a>
-						<a href="https://www.instagram.com/cuponeria/?hl=pt-br" target="_blank"><Instagram /></a>
-						<a href="https://twitter.com/Cuponeria" target="_blank"><Twitter /></a>
-						<a href="https://www.youtube.com/channel/UCvdHfsvEleYAGYOhIzPwNGg" target="_blank"><Youtube /></a>
-					</div>
-				</div>
-			</footer>
+			<Footer />
 		</>
 	)
 }

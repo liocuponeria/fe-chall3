@@ -1,0 +1,71 @@
+.product__result{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 0 177px;
+    @media(max-width: 991px){
+        // flex-direction: column;
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+        margin: 20px 0 20px;
+    }
+    .product__img--item{
+        @media(max-width: 991px){
+            display: block;
+            margin: 0 auto;
+        }
+        img {
+            width: 500px;
+            height: 310px;
+            border-radius: 14px;
+            object-fit: contain;
+            object-position: 0 0;
+            @media(max-width: 991px){
+                width: 100%;
+                height: 202px;
+            }
+        }
+    } 
+    .product__info__product{
+        .product__info__product--title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000B3;
+            @media(max-width: 991px){
+                padding: 23px 0 0;
+            }
+        }
+        .product__info__product--price {
+            font-size: 30px;
+            font-weight: 700;
+            color: var(---4caf50);
+            display: block;
+            padding: 10px 0;
+        }
+        .product__info__product--content {
+            font-size: 16px;
+            font-weight: 400;
+            color: #000;
+            line-height: 20px;
+        }
+        .product__info__product--btn{
+            width: 302px;
+            height: 36px;
+            border-radius: 18px;
+            box-shadow: 0 3px 6px #00000029;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(36,201,43);
+            background: linear-gradient(95deg, rgba(36,201,43,1) 0%, rgba(9,159,15,1) 100%);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            margin: 43px 0 0;
+            transition: all ease-in-out .3s;
+            &:hover{
+                background: linear-gradient(95deg, rgba(9,159,15,1) 0%, rgba(36,201,43,1) 100%);
+            }
+        }
+    }
+} 
