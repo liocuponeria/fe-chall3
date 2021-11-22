@@ -12,11 +12,10 @@ This test aims to test the candidate's knowledge regarding the technologies used
 
 ## Instructions
 
-Clone this repository.
-Create a new branch with your name.
-Checkout to the branch of your name.
-Commit your workflow, you can check this [article](https://medium.com/@rafael.oliveira/como-escrever-boas-mensagens-de-commit-9f8fe852155a).
-After you're done, push to the origin and send a pull request of the branch with your name.
+To complete this challenge, you need to create a repository on your account on GitHub from this template.
+Work on the challenge and then commit your workflow.
+You can check this [article](https://medium.com/@rafael.oliveira/como-escrever-boas-mensagens-de-commit-9f8fe852155a) for help.
+You can push all your commits to the origin and send us a link to your repository when you are finished.
 
 ## Skills Required
 
